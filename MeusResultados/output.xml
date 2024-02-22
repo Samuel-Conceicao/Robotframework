@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20240222 20:10:47.117" rpa="false" schemaversion="4">
+<suite id="s1" name="Exercicios de Robotframework" source="C:\Users\Samuel\Documents\Robotframework\Tests">
+<suite id="s1-s1" name="Exercicio 1" source="C:\Users\Samuel\Documents\Robotframework\Tests\exercicio 1.robot">
+<test id="s1-s1-t1" name="Exercício 01" line="32">
+<kw name="Exibir nome, idade, rua, numero, cep, bairro, cidade e estado no console a partir de um dicionário">
+<kw name="Log" library="BuiltIn">
+<arg>Olá, meu nome é ${PESSOA.nome1}, tenho ${Pessoa.idade1} anos e o meu endereço é ${Pessoa.rua1}, nº ${Pessoa.numero1}, cep ${Pessoa.cep1}, bairro ${Pessoa.bairro1}, cidade ${Pessoa.cidade1}, estado ${Pessoa.estado1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.170" level="INFO">Olá, meu nome é Alice Oliveira, tenho 18 anos e o meu endereço é Rua Frederico Hildebrand, nº 100, cep 13610-370, bairro Jardim Amália, cidade Leme, estado São Paulo</msg>
+<status status="PASS" starttime="20240222 20:10:47.162" endtime="20240222 20:10:47.170"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Olá, meu nome é ${PESSOA.nome2}, tenho ${Pessoa.idade2} anos e o meu endereço é ${Pessoa.rua2}, nº ${Pessoa.numero2}, cep ${Pessoa.cep2}, bairro ${Pessoa.bairro2}, cidade ${Pessoa.cidade2}, estado ${Pessoa.estado2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.181" level="INFO">Olá, meu nome é José da Silva, tenho 21 anos e o meu endereço é Rua Serra do Roncador, nº 100, cep 86065-590, bairro Bandeirantes, cidade Londrina, estado Paraná</msg>
+<status status="PASS" starttime="20240222 20:10:47.171" endtime="20240222 20:10:47.181"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.161" endtime="20240222 20:10:47.181"/>
+</kw>
+<doc>Este teste realiza o Exercício 1 referente ao 2º desafio</doc>
+<status status="PASS" starttime="20240222 20:10:47.160" endtime="20240222 20:10:47.183"/>
+</test>
+<doc>Exercício Dicionário</doc>
+<status status="PASS" starttime="20240222 20:10:47.155" endtime="20240222 20:10:47.185"/>
+</suite>
+<suite id="s1-s2" name="Exercicio 2" source="C:\Users\Samuel\Documents\Robotframework\Tests\exercicio 2.robot">
+<test id="s1-s2-t1" name="Exercício 02" line="15">
+<kw name="Calcular o ano de nascimento a partir da idade">
+<arg>30</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20240222 20:10:47.213" level="INFO">${date} = 2024-02-22 20:10:47.213</msg>
+<status status="PASS" starttime="20240222 20:10:47.213" endtime="20240222 20:10:47.213"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${ano_atual}</var>
+<arg>${date}</arg>
+<arg>-</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<msg timestamp="20240222 20:10:47.214" level="INFO">${ano_atual} = 2024</msg>
+<status status="PASS" starttime="20240222 20:10:47.214" endtime="20240222 20:10:47.214"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${ano_atual}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.217" level="INFO">2024</msg>
+<status status="PASS" starttime="20240222 20:10:47.214" endtime="20240222 20:10:47.217"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ano_nascimento}</var>
+<arg>${ano_atual} - ${idade}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240222 20:10:47.218" level="INFO">${ano_nascimento} = 1994</msg>
+<status status="PASS" starttime="20240222 20:10:47.217" endtime="20240222 20:10:47.218"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${ano_nascimento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.218" level="INFO">1994</msg>
+<status status="PASS" starttime="20240222 20:10:47.218" endtime="20240222 20:10:47.218"/>
+</kw>
+<if>
+<branch type="IF" condition="${ano_nascimento} &gt; ${ano_atual}">
+<kw name="Log" library="BuiltIn">
+<arg>Olá, gostaria de avisa-lo que você nasceu nesse século!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.218" endtime="20240222 20:10:47.218"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.218" endtime="20240222 20:10:47.218"/>
+</branch>
+<branch type="ELSE IF" condition="${ano_nascimento} &lt; ${ano_atual}">
+<kw name="Log" library="BuiltIn">
+<arg>Olá, gostaria de avisa-lo que você nasceu no século passado!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.219" level="INFO">Olá, gostaria de avisa-lo que você nasceu no século passado!</msg>
+<status status="PASS" starttime="20240222 20:10:47.219" endtime="20240222 20:10:47.219"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.219" endtime="20240222 20:10:47.219"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.219" endtime="20240222 20:10:47.219"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.219" endtime="20240222 20:10:47.219"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.218" endtime="20240222 20:10:47.219"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.213" endtime="20240222 20:10:47.219"/>
+</kw>
+<doc>Este teste realiza o Exercício 2 referente ao 2º desafio</doc>
+<status status="PASS" starttime="20240222 20:10:47.212" endtime="20240222 20:10:47.220"/>
+</test>
+<doc>Exercício Argumentos e Retornos + If Simples</doc>
+<status status="PASS" starttime="20240222 20:10:47.187" endtime="20240222 20:10:47.225"/>
+</suite>
+<suite id="s1-s3" name="Exercicio 3" source="C:\Users\Samuel\Documents\Robotframework\Tests\exercicio 3.robot">
+<test id="s1-s3-t1" name="Exercício 03" line="14">
+<kw name="Exiba cada uma das frutas de uma lista usando um For Simples">
+<kw name="Create List" library="BuiltIn">
+<var>@{FRUTAS}</var>
+<arg>morango</arg>
+<arg>banana</arg>
+<arg>maça</arg>
+<arg>uva</arg>
+<arg>açaí</arg>
+<arg>manga</arg>
+<arg>melancia</arg>
+<arg>laranja</arg>
+<arg>ameixa</arg>
+<arg>pera</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240222 20:10:47.242" level="INFO">@{FRUTAS} = [ morango | banana | maça | uva | açaí | manga | melancia | laranja | ameixa | pera ]</msg>
+<status status="PASS" starttime="20240222 20:10:47.242" endtime="20240222 20:10:47.242"/>
+</kw>
+<for flavor="IN">
+<var>${FRUTA}</var>
+<value>@{FRUTAS}</value>
+<iter>
+<var name="${FRUTA}">morango</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.243" level="INFO">morango</msg>
+<status status="PASS" starttime="20240222 20:10:47.243" endtime="20240222 20:10:47.243"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.243" endtime="20240222 20:10:47.244"/>
+</iter>
+<iter>
+<var name="${FRUTA}">banana</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.244" level="INFO">banana</msg>
+<status status="PASS" starttime="20240222 20:10:47.244" endtime="20240222 20:10:47.244"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.244" endtime="20240222 20:10:47.244"/>
+</iter>
+<iter>
+<var name="${FRUTA}">maça</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.245" level="INFO">maça</msg>
+<status status="PASS" starttime="20240222 20:10:47.244" endtime="20240222 20:10:47.245"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.244" endtime="20240222 20:10:47.245"/>
+</iter>
+<iter>
+<var name="${FRUTA}">uva</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.245" level="INFO">uva</msg>
+<status status="PASS" starttime="20240222 20:10:47.245" endtime="20240222 20:10:47.245"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.245" endtime="20240222 20:10:47.245"/>
+</iter>
+<iter>
+<var name="${FRUTA}">açaí</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.246" level="INFO">açaí</msg>
+<status status="PASS" starttime="20240222 20:10:47.245" endtime="20240222 20:10:47.246"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.245" endtime="20240222 20:10:47.246"/>
+</iter>
+<iter>
+<var name="${FRUTA}">manga</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.247" level="INFO">manga</msg>
+<status status="PASS" starttime="20240222 20:10:47.247" endtime="20240222 20:10:47.247"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.247" endtime="20240222 20:10:47.247"/>
+</iter>
+<iter>
+<var name="${FRUTA}">melancia</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.248" level="INFO">melancia</msg>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.248"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.248"/>
+</iter>
+<iter>
+<var name="${FRUTA}">laranja</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.248" level="INFO">laranja</msg>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.248"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.248"/>
+</iter>
+<iter>
+<var name="${FRUTA}">ameixa</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.249" level="INFO">ameixa</msg>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.249"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.248" endtime="20240222 20:10:47.249"/>
+</iter>
+<iter>
+<var name="${FRUTA}">pera</var>
+<kw name="Log" library="BuiltIn">
+<arg>${FRUTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240222 20:10:47.249" level="INFO">pera</msg>
+<status status="PASS" starttime="20240222 20:10:47.249" endtime="20240222 20:10:47.249"/>
+</kw>
+<status status="PASS" starttime="20240222 20:10:47.249" endtime="20240222 20:10:47.249"/>
+</iter>
+<status status="PASS" starttime="20240222 20:10:47.242" endtime="20240222 20:10:47.249"/>
+</for>
+<status status="PASS" starttime="20240222 20:10:47.241" endtime="20240222 20:10:47.249"/>
+</kw>
+<doc>Este teste realiza o Exercício 2 referente ao 2º desafio</doc>
+<status status="PASS" starttime="20240222 20:10:47.240" endtime="20240222 20:10:47.250"/>
+</test>
+<doc>Exercício For Simples + Lista</doc>
+<status status="PASS" starttime="20240222 20:10:47.233" endtime="20240222 20:10:47.253"/>
+</suite>
+<suite id="s1-s4" name="Exercicio 4" source="C:\Users\Samuel\Documents\Robotframework\Tests\exercicio 4.robot">
+<test id="s1-s4-t1" name="Exercício 04" line="16">
+<kw name="Crie um loop que conte quantos números par existem entre 0 e 10, usando if inline">
+<kw name="Create List" library="BuiltIn">
+<var>@{numeros}</var>
+<arg>0</arg>
+<arg>1</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>4</arg>
+<arg>5</arg>
+<arg>6</arg>
+<arg>7</arg>
+<arg>8</arg>
+<arg>9</arg>
+<arg>10</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240222 20:10:47.598" level="INFO">@{numeros} = [ 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 ]</msg>
+<status status="PASS" starttime="20240222 20:10:47.598" endtime="20240222 20:10:47.598"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${numeros}</var>
+<value>0</value>
+<value>10</value>
+<value>2</value>
+<iter>
+<var name="${numeros}">0</var>
+<if>
+<branch type="IF" condition="${numeros} == ${numeros}">
+<continue>
+<status status="PASS" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</continue>
+<status status="PASS" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>${numeros}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.599"/>
+</iter>
+<iter>
+<var name="${numeros}">2</var>
+<if>
+<branch type="IF" condition="${numeros} == ${numeros}">
+<continue>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.600"/>
+</continue>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.600"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>${numeros}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.600"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.600"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.600"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.599" endtime="20240222 20:10:47.600"/>
+</iter>
+<iter>
+<var name="${numeros}">4</var>
+<if>
+<branch type="IF" condition="${numeros} == ${numeros}">
+<continue>
+<status status="PASS" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.601"/>
+</continue>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.601"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>${numeros}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.601"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.601"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.601"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.600" endtime="20240222 20:10:47.601"/>
+</iter>
+<iter>
+<var name="${numeros}">6</var>
+<if>
+<branch type="IF" condition="${numeros} == ${numeros}">
+<continue>
+<status status="PASS" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.601"/>
+</continue>
+<status status="PASS" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.601"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>${numeros}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.602"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.602"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.602"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.601" endtime="20240222 20:10:47.602"/>
+</iter>
+<iter>
+<var name="${numeros}">8</var>
+<if>
+<branch type="IF" condition="${numeros} == ${numeros}">
+<continue>
+<status status="PASS" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.602"/>
+</continue>
+<status status="PASS" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.602"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>${numeros}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.602"/>
+</kw>
+<status status="NOT RUN" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.603"/>
+</branch>
+<status status="PASS" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.603"/>
+</if>
+<status status="PASS" starttime="20240222 20:10:47.602" endtime="20240222 20:10:47.603"/>
+</iter>
+<status status="PASS" starttime="20240222 20:10:47.598" endtime="20240222 20:10:47.603"/>
+</for>
+<status status="PASS" starttime="20240222 20:10:47.598" endtime="20240222 20:10:47.603"/>
+</kw>
+<doc>Este teste realiza o Exercício 4 referente ao 2º desafio</doc>
+<status status="PASS" starttime="20240222 20:10:47.596" endtime="20240222 20:10:47.603"/>
+</test>
+<doc>Exercício If Inline + For in Range</doc>
+<status status="PASS" starttime="20240222 20:10:47.257" endtime="20240222 20:10:47.605"/>
+</suite>
+<status status="PASS" starttime="20240222 20:10:47.119" endtime="20240222 20:10:47.608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Exercicios de Robotframework">Exercicios de Robotframework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Exercicio 1">Exercicios de Robotframework.Exercicio 1</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Exercicio 2">Exercicios de Robotframework.Exercicio 2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Exercicio 3">Exercicios de Robotframework.Exercicio 3</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="Exercicio 4">Exercicios de Robotframework.Exercicio 4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

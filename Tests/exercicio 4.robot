@@ -8,7 +8,6 @@ Documentation       Exercício If Inline + For in Range
 
 Library             DateTime
 Library             String
-Library             SeleniumLibrary
 Library             Collections
 
 
