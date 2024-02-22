@@ -14,6 +14,6 @@ Este repositorio é utilizado para treinar conceitos de robotframework.
 Na raiz do projeto, através de seu Prompt de Commando/Terminal/Console execute o comando 
 
 ```bash
-mvn clean spring-boot:run
+robot -N “Exercicios de Robotframework” -d ../Robotframework/MeusResultados Tests
 ```
 
