@@ -1,6 +1,6 @@
 # Repositorio de exercicios
 
-Este repositorio é utilizado para treinar conceitos de robotframework. ![image](https://github.com/Samuel-Conceicao/Robotframework/assets/90928910/a3510b0d-3357-4374-a7cb-314ac52c2643)
+Este repositorio é utilizado para treinar conceitos de robotframework.
 
 
 ##  Requisitos
